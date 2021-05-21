@@ -1,13 +1,25 @@
 import styled from '@emotion/styled';
 
 export const SearchBar = styled.input`
-    margin-top: 20px;
     padding-left: 20px;
-    border-radius: 8px 8px 0 0 ;
+    border-radius: 8px 0 0 0 ;
     border: 1px solid black;
     height: 3vw;
-    width: 21vw;
+    width: 19vw;
     font-size: 1.3vw;
+`
+
+export const SubmitButton = styled.button`
+    width: 3vw;
+    height: 3vw;
+    border-width: 1px 1px 1px 0;
+    border-color: black;
+    border-style: solid;
+    border-radius: 0 8px 0 0;
+    background-color: white;
+    &:hover {
+        background-color: rgb(220, 220, 220);
+      }
 `
 
 export const FilteredNames = styled.div`
@@ -18,12 +30,16 @@ export const FilteredNames = styled.div`
     
 export const Name = styled.p`
     height: 100%;
-    width: 21vw;
+    width: 22vw;
     padding: 1% 1% 1% 20px;
     border-width: 0 1px 1px 1px;
     border-color: black;
     border-style: solid;
     font-size: 1.4vw;
+    cursor: pointer;
+    &:hover {
+        background-color: rgb(220, 220, 220);
+    }
 `
 
 export const SearchImage = styled.img`

@@ -8,9 +8,9 @@ export function SearchResult(props) {
             {
                 props.InputValue.length > 0
 
-                    ? props.NameArray.filter(name => {
-                        return name.toLowerCase().match(props.InputValue)
-                    }).map(name => <Name key={name}>{name}</Name> 
+                    ? props.NameArray.filter(names => {
+                        return names.toLowerCase().match(props.InputValue)
+                    }).map(name => <Name onClick={props.ChooseName} key={name}>{name}</Name> 
                         )
                     : <SearchImage src="https://www.brafton.com/wp-content/uploads/2013/03/shutterstock_123304099-350x245.jpg" alt="search" />
             }
