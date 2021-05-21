@@ -1,7 +1,7 @@
 import React from 'react';
 import { FilteredNames, Name, SearchImage } from './StyledComponents'
 
-export function SearchComponent(props) {
+export function SearchResult(props) {
 
     return (
         <FilteredNames>
@@ -10,8 +10,7 @@ export function SearchComponent(props) {
 
                     ? props.NameArray.filter(name => {
                         return name.toLowerCase().match(props.InputValue)
-                    }).map(name =>
-                        <Name>{name}</Name>
+                    }).map(name => <Name key={name}>{name}</Name> 
                         )
                     : <SearchImage src="https://www.brafton.com/wp-content/uploads/2013/03/shutterstock_123304099-350x245.jpg" alt="search" />
             }
