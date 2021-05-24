@@ -29,7 +29,7 @@ class App extends Component {
     })
   }
 
-  debounceSearch = _.debounce(e => this.search(e), 1000)
+  debounceSearch = _.debounce(e => this.search(e), 400)
 
   handleChangeInput = (e) => {
     this.setState({
