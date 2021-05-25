@@ -8,7 +8,7 @@ import history from './history';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router history={history}>
+    <Router  history={history}>
       <App />
     </Router>
   </React.StrictMode>,

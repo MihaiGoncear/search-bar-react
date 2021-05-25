@@ -6,7 +6,7 @@ export function SearchResult(props) {
     return (
         <FilteredNames>
             {
-                props.InputValue.length > 0
+                props.InputValue.length > 0 && props.InputValue !== 'home'
 
                     ? props.NameArray.filter(name => {
                         return name.toLowerCase().match(props.InputValue.toLowerCase())

@@ -9,7 +9,7 @@ export const SearchBar = styled.input`
     font-size: 1.3vw;
 `
 
-export const SubmitButton = styled.button`
+export const SubmitButton = styled.div`
     width: 3vw;
     height: 3vw;
     border-width: 1px 1px 1px 0;
@@ -17,6 +17,9 @@ export const SubmitButton = styled.button`
     border-style: solid;
     border-radius: 0 8px 0 0;
     background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     &:hover {
         background-color: rgb(220, 220, 220);
       }

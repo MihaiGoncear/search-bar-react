@@ -25,3 +25,30 @@ span {
 a {
   text-decoration: none;
 }
+
+.container__choosed {
+  margin-top: 40px;
+  font-size: 1vw;
+  list-style-position: inside;
+  width: 17vw;
+}
+
+.container__choosed li {
+  padding: 2%;
+  width: 100%;
+  border-width: 1px 1px 0 1px;
+  border-style: solid;
+  border-color: black;
+  height: 2vw;
+}
+
+.container__choosed li:first-child {
+  border-top-left-radius:8px;
+  border-top-right-radius:8px;
+}
+
+.container__choosed li:last-child {
+  border: 1px solid black;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}

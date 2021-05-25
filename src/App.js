@@ -12,9 +12,10 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      input: history.location.pathname.substring(1),
+      input: history.location.pathname === '/home' ? '' : history.location.pathname.substring(1),
       array: NameArray,
       searchString: '',
+      choosedNamesArray: []
     };
     this.handleChangeInput = this.handleChangeInput.bind(this);
     this.chooseName = this.chooseName.bind(this);
@@ -45,7 +46,32 @@ class App extends Component {
     this.search(e.target.innerText)
   }
 
+  addNameToChoosedList = () => {
+    let newChoosedNamesArray = this.state.choosedNamesArray
+    let choosedNameFromInput = this.state.input
+    let newFullNameArray = this.state.array
+
+
+    !newChoosedNamesArray.find(item =>
+      item === choosedNameFromInput) && newFullNameArray.includes(choosedNameFromInput)
+      ? newChoosedNamesArray.push(choosedNameFromInput)
+      : alert("This Name doesn't exist! Please choose another name")
+
+    newFullNameArray.map((nm, index) =>
+      nm === choosedNameFromInput ? newFullNameArray.splice(index, 1) : null
+    )
+
+    this.setState({
+      choosedNamesArray: newChoosedNamesArray,
+      array: newFullNameArray,
+      input: '',
+    })
+
+    this.search('home')
+  }
+
   render() {
+    console.log(this.state)
     return (
       <div className="container">
         <form className="container__form">
@@ -54,10 +80,9 @@ class App extends Component {
             type='text'
             value={this.state.input}
             placeholder='Search...'
-
           />
-          <SubmitButton>
-            {this.state.choosedName === '' ? <span>&#128270;</span> : <p>&#128270;</p>}
+          <SubmitButton role="button" onClick={this.addNameToChoosedList}>
+            <span>+</span>
           </SubmitButton>
         </form>
 
@@ -68,6 +93,14 @@ class App extends Component {
           InputValue={this.state.searchString}
           NameArray={this.state.array}
         />
+
+        <ol className="container__choosed">
+          {
+            this.state.choosedNamesArray.map((nm, index) =>
+              <li key={index}>{nm}</li>
+            )
+          }
+        </ol>
       </div>
     );
   }
